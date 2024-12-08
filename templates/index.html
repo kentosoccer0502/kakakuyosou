@@ -13,37 +13,34 @@
     <p>条件を入力してください。</p>
     <div class="terms">
       <label for="room_size">広さ</label>
-      <input id="room_size" type="number" value="50" v-model="roomSize"/>
-      <p v-cloak>確認用：{{roomSize}}</p>
+      <input id="room_size" type="number" value="50" v-model="terms.roomSize"/>
     </div>
     <div class="terms">
       <label for="distance">距離（分）</label>
-      <input id="distance" type="number" value="10" v-model="distance"/>
-      <p v-cloak>確認用：{{distance}}</p>
+      <input id="distance" type="number" value="10" v-model="terms.distance"/>
     </div>
     <div class="terms">
       <label for="years">築年数</label>
-      <input id="years" type="text" value="20" v-model="years"/>
-      <p v-cloak>確認用：{{years}}</p>
+      <input id="years" type="text" value="20" v-model="terms.years"/>
     </div>
     <div class="terms">
       <label for="area">エリア</label>
-      <select id="area" v-model="area">
+      <select id="area" v-model="terms.area">
           <option value="A">エリアA</option>
           <option value="B">エリアB</option>
           <option value="C">エリアC</option>
       </select>
-      <p v-cloak>確認用：{{area}}</p>
     </div>
-    <button v-on:click="predict" id="predict">予測実行（仮）</button>
+    <button v-on:click="predictWithTerms" id="predict">予測実行</button>
     <div class="result">
-      <p v-cloak>予測結果（仮）</p>
+      <p v-cloak>予測結果</p>
     
       <span id="predicted-price">{{predictedPrice}}</span>千円
     </div>
 </div>
 </div>
 <script src="https://unpkg.com/vue@3.2.45"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="static/js/main.js">
 </script>
 
